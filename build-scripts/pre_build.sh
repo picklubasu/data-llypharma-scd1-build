@@ -6,7 +6,7 @@ STARTING_DIR=$PWD
 # Copy python packages
 
 CONFIG_PACKAGE_FOLDER="$CODEBUILD_SRC_DIR/config/package/"
-S3_PACKAGE_CONFIG_FOLDER="s3://s3-my-softwares/package/"
+S3_PACKAGE_CONFIG_FOLDER=${S3_PACKAGE_CONFIG_FOLDER}
 echo "Copying package files..."
 aws s3 cp $CONFIG_PACKAGE_FOLDER $S3_PACKAGE_CONFIG_FOLDER --recursive
 
