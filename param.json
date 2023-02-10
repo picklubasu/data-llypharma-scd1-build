@@ -1,0 +1,9 @@
+{
+    "Parameters": {
+        "pEnv": "main"
+        ,"pRawIngestLambda": "llypharma-data-generator"
+        ,"pPyPackageBucket": "s3-my-softwares"
+        ,"pPyPackageKey": "package/"
+        ,"pPyPackagePandas": "python.zip"
+    }
+}
