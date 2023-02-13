@@ -7,7 +7,7 @@ Resources:
     CompatibleRuntimes:
       - 'python3.9'
     Content:
-      S3Bucket: !Sub '${pPyPackageBucket}'
-      S3Key: !Sub '${pPyPackageKey}/${pPyPackagePandas}'
+      S3Bucket: 's3-my-softwares'
+      S3Key: !Sub 'package/python.zip'
       Description:  'Python package'
-      LayerName:  'pandas'
+      LayerName:  'pagla'
