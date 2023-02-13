@@ -12,6 +12,7 @@
 
 build_application() {
 	sam build --template-file ${TEMPLATE_PATH}
+	echo "template.yml file found."
 }
 
 package_application() {
