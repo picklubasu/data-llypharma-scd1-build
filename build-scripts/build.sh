@@ -20,12 +20,12 @@ package_application() {
 }
 
 package_deploy() {
-	sam deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name MyFirstCodeBuild
+	sam deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name llypharma-data-process
 }
 
 echo "Starting build - $(date)"
 set -xe
-#build_application
-#package_application
-#package_deploy
+build_application
+package_application
+package_deploy
 echo "Completed build - $(date)"
