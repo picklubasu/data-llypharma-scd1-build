@@ -12,7 +12,6 @@
 
 build_application() {
 	sam build --template-file ${TEMPLATE_PATH}
-	echo "test 2"
 }
 
 package_application() {
@@ -26,7 +25,6 @@ package_deploy() {
 
 echo "Starting build - $(date)"
 set -xe
-echo "test 1"
 build_application
 #package_application
 package_deploy
