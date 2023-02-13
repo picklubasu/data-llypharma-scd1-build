@@ -28,6 +28,6 @@ echo "Starting build - $(date)"
 set -xe
 echo "test 1"
 build_application
-package_application
+#package_application
 package_deploy
 echo "Completed build - $(date)"
