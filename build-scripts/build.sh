@@ -20,7 +20,7 @@ package_application() {
 }
 
 package_deploy() {
-	sam deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name llypharma-data-process
+	sam deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name llypharma-data-execution
 }
 
 echo "Starting build - $(date)"
