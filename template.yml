@@ -25,5 +25,5 @@ Resources:
       Content:
         S3Bucket: 's3-my-softwares'
         S3Key: 'package/python.zip'
-        Description:  'Python package'
-        LayerName:  'pagla'
+      Description:  'Python package'
+      LayerName:  'pagla'
