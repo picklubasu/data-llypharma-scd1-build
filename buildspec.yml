@@ -9,4 +9,5 @@ phases:
 artifacts:
   files:
     - ${TEMPLATE_PATH}
+    - ${PARAM_FILE_NAME}
   discard-paths: no
