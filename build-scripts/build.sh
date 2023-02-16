@@ -20,8 +20,9 @@ package_application() {
 }
 
 package_deploy() {
-	SAM_PARAMETERS=$( cat ${CODEBUILD_SRC_DIR}/param.json)
-	sam deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name llypharma-data-execution --parameter-overrides pPyPackageBucket=s3-my-softwares
+	SAM_PARAMETERS=$( cat ${CODEBUILD_SRC_DIR}/param.json | jq -r '.[] | "\(.ParameterKey)=\(.ParameterValue)"' )
+	sam deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name llypharma-data-execution --parameter-overrides $SAM_PARAMETERS
+	#aws cloudformation deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name llypharma-data-execution --parameter-overrides 
 }
 
 echo "Starting build - $(date)"
