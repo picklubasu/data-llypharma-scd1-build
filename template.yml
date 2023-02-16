@@ -20,6 +20,6 @@ Resources:
         - 'python3.9'
       Content:
         S3Bucket: !Ref pPyPackageBucket
-        S3Key: !Ref pPyPackageKey/pPyPackagePandas
+        S3Key: 'package/python.zip'
       Description:  'Python package'
       LayerName:  'pandas'
