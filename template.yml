@@ -17,4 +17,4 @@ Resources:
           Ref: pPyPackageBucket
         S3Key: 'package/python.zip'
       Description:  'Python package'
-      LayerName:  'paglu'
+      LayerName:  'hghnfgh'
