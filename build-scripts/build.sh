@@ -20,8 +20,7 @@ package_application() {
 }
 
 package_deploy() {
-	SAM_PARAMETERS=$( cat ${CODEBUILD_SRC_DIR}/${PARAM_FILE_NAME} | jq -r '.[] | "\(.ParameterKey)=\(.ParameterValue)"' )
-	echo $SAM_PARAMETERS
+	SAM_PARAMETERS=$( cat ${CODEBUILD_SRC_DIR}/param.dev.json | jq -r '.[] | "\(.ParameterKey)=\(.ParameterValue)"' )
 	sam deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name llypharma-data-execution --parameter-overrides $SAM_PARAMETERS 
 }
 
