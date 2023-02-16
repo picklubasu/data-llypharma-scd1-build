@@ -5,12 +5,12 @@ Parameters:
   pPyPackageBucket:
     Type: String
     Description: S3 Bucket for software lib package
-  #pPyPackageKey:
-  #  Type: String
-  #  Description: Library path
-  #pPyPackagePandas:
-  #  Type: String
-  #  Description: Package name
+  pPyPackageKey:
+    Type: String
+    Description: Library path
+  pPyPackagePandas:
+    Type: String
+    Description: Package name
   
 Resources:
   LambdaLayer:
