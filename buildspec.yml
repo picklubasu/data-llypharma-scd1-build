@@ -9,5 +9,5 @@ phases:
 artifacts:
   files:
     - ${TEMPLATE_PATH}
-    - ${CODEBUILD_SRC_DIR}/param.json
+    - ${PARAM_FILE_NAME}
   discard-paths: no

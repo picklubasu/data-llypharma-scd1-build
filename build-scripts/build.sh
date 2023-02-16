@@ -20,7 +20,8 @@ package_application() {
 }
 
 package_deploy() {
-	sam deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name llypharma-data-execution
+	SAM_PARAMETERS=$( cat ${CODEBUILD_SRC_DIR}/param.json)
+	sam deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name llypharma-data-execution --parameter-overrides $SAM_PARAMETERS
 }
 
 echo "Starting build - $(date)"
