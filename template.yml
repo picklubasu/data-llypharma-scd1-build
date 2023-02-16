@@ -8,9 +8,9 @@ Parameters:
   #pPyPackageKey:
   #  Type: String
   #  Description: Library path
-  #pPyPackagePandas:
-  #  Type: String
-  #  Description: Package name
+  pPyPackagePandas:
+    Type: String
+    Description: Package name
 Resources:
   LambdaLayer:
     Type: 'AWS::Lambda::LayerVersion'
@@ -21,4 +21,4 @@ Resources:
         S3Bucket: !Ref pPyPackageBucket
         S3Key: 'package/python.zip'
       Description:  'Python package'
-      LayerName:  'pandas'
+      LayerName:  !Ref pPyPackagePandas
