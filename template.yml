@@ -2,21 +2,10 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: CloudFormation template to create serverless ETL data upsert solution
 Parameters:
-  pEnv:
-    Type: String
-    Description: AWS environment
-  pRawIngestLambda:
-    Type: String
-    Description: Data generator lambda function name
   pPyPackageBucket:
     Type: String
     Description: S3 Bucket for software lib package
-  pPyPackageKey:
-    Type: String
-    Description: S3 Key for software lib package
-  pPyPackagePandas:
-    Type: String
-    Description: Python lib name
+  
 Resources:
   LambdaLayer:
     Type: 'AWS::Lambda::LayerVersion'
