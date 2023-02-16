@@ -21,7 +21,7 @@ package_application() {
 
 package_deploy() {
 	SAM_PARAMETERS=$( cat ${CODEBUILD_SRC_DIR}/param.json)
-	sam deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name llypharma-data-execution --parameter-overrides $SAM_PARAMETERS
+	sam deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name llypharma-data-execution --parameter-overrides pPyPackageBucket=s3-my-softwares
 }
 
 echo "Starting build - $(date)"
