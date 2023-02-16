@@ -2,15 +2,15 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: CloudFormation template to create serverless ETL data upsert solution
 Parameters:
-  pPyPackageBucket:
+  pBucket:
     Type: String
     Description: S3 Bucket for software lib package
-  pPyPackageKey:
-    Type: String
-    Description: Library path
-  pPyPackagePandas:
-    Type: String
-    Description: Package name
+  #pPyPackageKey:
+  #  Type: String
+  #  Description: Library path
+  #pPyPackagePandas:
+  #  Type: String
+  #  Description: Package name
 Resources:
   LambdaLayer:
     Type: 'AWS::Lambda::LayerVersion'
@@ -18,7 +18,7 @@ Resources:
       CompatibleRuntimes:
         - 'python3.8'
       Content:
-        S3Bucket: !Ref pPyPackageBucket
+        S3Bucket: !Ref pBucket
         S3Key: 'package/python.zip'
       Description:  'Python package'
       LayerName:  'pandas'
