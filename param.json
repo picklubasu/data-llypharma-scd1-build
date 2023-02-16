@@ -2,7 +2,7 @@
     "Parameters": {
         "pEnv": "dev"
         ,"pRawIngestLambda": "llypharma-data-generator"
-        ,"pBucket": "s3-my-softwares"
+        ,"pPyPackageBucket": "s3-my-softwares"
         ,"pPyPackageKey": "package"
         ,"pPyPackagePandas": "python.zip"
     },
