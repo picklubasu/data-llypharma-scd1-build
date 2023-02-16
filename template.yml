@@ -5,6 +5,12 @@ Parameters:
   pPyPackageBucket:
     Type: String
     Description: S3 Bucket for software lib package
+  pPyPackageKey:
+    Type: String
+    Description: Library path
+  pPyPackagePandas:
+    Type: String
+    Description: Package name
   
 Resources:
   LambdaLayer:
@@ -13,8 +19,7 @@ Resources:
       CompatibleRuntimes:
         - 'python3.9'
       Content:
-        S3Bucket:
-          Ref: pPyPackageBucket
-        S3Key: 'package/python.zip'
+        S3Bucket: !Ref pPyPackageBucket
+        S3Key: !Ref pPyPackageKey/pPyPackagePandas
       Description:  'Python package'
-      LayerName:  'hghnfgh'
+      LayerName:  'pandas'
