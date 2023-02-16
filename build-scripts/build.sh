@@ -21,7 +21,8 @@ package_application() {
 
 package_deploy() {
 	#SAM_PARAMETERS=$( cat ${CODEBUILD_SRC_DIR}/param.json | jq -r '[ .[] | "\(.ParameterKey)=\(.ParameterValue)" ] | join(" ")' )
-	sam deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name llypharma-data-execution --parameter-overrides "$(jq -j 'to_entries[] | "\(.key)='\\\"'\(.value)'\\\"''\ '"' params.json)"
+	#sam deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name llypharma-data-execution --parameter-overrides "$(jq -j 'to_entries[] | "\(.key)='\\\"'\(.value)'\\\"''\ '"' params.json)"
+	sam deploy --template-file ${CODEBUILD_SRC_DIR}/template.yml --stack-name llypharma-data-execution --parameter-overrides "$(jq -r 'to_entries[] | "\(.key)='\\\"'\(.value)'\\\"''\ '"' param.json)"
 }
 
 echo "Starting build - $(date)"
