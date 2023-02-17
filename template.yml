@@ -15,7 +15,7 @@ Resources:
   LambdaLayer:
     Type: 'AWS::Lambda::LayerVersion'
     Properties:
-       CompatibleArchitectures:
+      CompatibleArchitectures:
         - 'x86_64'
       CompatibleRuntimes:
         - 'python3.9'
