@@ -5,7 +5,7 @@
         ,"pPyPackageBucket": "s3-my-softwares"
         ,"pPyPackageKey": "package"
         ,"pPyPackagePandas": "python.zip"
-        ,"pllypharmaLambdaScripts": "llypharma-code/code/lambda"
+        ,"pllypharmaLambdaScripts": "llypharma-code/lambda"
         ,"pLambdaDataGenerator": "llypharma_data_gen.zip"
     },
     "Tags": {
