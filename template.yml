@@ -27,8 +27,9 @@ Resources:
   llypharmaDataGenerator:
     Type: AWS::Lambda::Function
     Properties:
-      Runtime: python3.9
+      Runtime: nodejs12.x
       Role: arn:aws:iam::345814638087:role/IAM-LAMBDA-SERVICE
+      Handler: index.handler
       Code:
         ZipFile: |
           import boto3
