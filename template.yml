@@ -30,7 +30,8 @@ Resources:
       Runtime: python3.9
       Role: arn:aws:iam::345814638087:role/IAM-LAMBDA-SERVICE
       Code:
-        S3Bucket: !Ref pPyPackageBucket
-        S3Key: !Sub ${pllypharmaLambdaScripts}/${pLambdaDataGenerator}
-      Timeout: 10240
-      
+        ZipFile: |
+          import boto3
+        #S3Bucket: !Ref pPyPackageBucket
+        #S3Key: !Sub ${pllypharmaLambdaScripts}/${pLambdaDataGenerator}
+      Timeout: 5
