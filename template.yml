@@ -30,15 +30,15 @@ Resources:
         S3Key: !Sub ${pPyPackageKey}/${pPyPackagePandas}
       Description:  'Python package'
       LayerName:  'pandas'
-  llypharmaDataGenerator:
+  LLLYPHARMADATAGEN:
     Type: AWS::Lambda::Function
     Properties:
       Runtime: python3.9
       Role: arn:aws:iam::345814638087:role/IAM-LAMBDA-SERVICE
-      Handler: index.handler
+      Handler: lambda_function.lambda_handler
       Code:
-        #ZipFile: |
-        #  import boto3
         S3Bucket: !Ref pPyPackageBucket
         S3Key: !Sub ${pllypharmaLambdaScripts}/${pLambdaDataGenerator}
-      Timeout: 5
+      Timeout: 300
+      MemorySize: 3008
+      Description: Generate data
