@@ -11,6 +11,12 @@ Parameters:
   pPyPackagePandas:
     Type: String
     Description: Package name
+  pllypharmaLambdaScripts:
+    Type: String
+    Description: Lambda script location
+  pLambdaDataGenerator:
+    Type: String
+    Description: Data generator code
 Resources:
   LambdaLayer:
     Type: 'AWS::Lambda::LayerVersion'
@@ -27,12 +33,12 @@ Resources:
   llypharmaDataGenerator:
     Type: AWS::Lambda::Function
     Properties:
-      Runtime: nodejs12.x
+      Runtime: python3.9
       Role: arn:aws:iam::345814638087:role/IAM-LAMBDA-SERVICE
       Handler: index.handler
       Code:
-        ZipFile: |
-          import boto3
-        #S3Bucket: !Ref pPyPackageBucket
-        #S3Key: !Sub ${pllypharmaLambdaScripts}/${pLambdaDataGenerator}
+        #ZipFile: |
+        #  import boto3
+        S3Bucket: !Ref pPyPackageBucket
+        S3Key: !Sub ${pllypharmaLambdaScripts}/${pLambdaDataGenerator}
       Timeout: 5
