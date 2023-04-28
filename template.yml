@@ -42,10 +42,27 @@ Resources:
       Timeout: 300
       MemorySize: 3008
       Description: Generate data
+
   rllypharmaRawStageLoad:
     Type: AWS::Glue::Job
     Properties:
       Name: "llypharma-raw-stage-load"
+      Role: 'arn:aws:iam::345814638087:role/IAM-GLUE-SERVICE'
+      Command:
+        Name: glueetl
+        PythonVersion:  '3'
+        ScriptLocation:
+          Fn::Sub:  's3://s3-ftp-source/code/code.py'
+      GlueVersion:  '2.0'
+      WorkerType: 'Standard'
+      NumberOfWorkers:  2
+      ExecutionProperty:
+        MaxConcurrentRuns:  24
+
+  rllypharmaStageConformedLoad:
+    Type: AWS::Glue::Job
+    Properties:
+      Name: "llypharma-stage-conformed-load"
       Role: 'arn:aws:iam::345814638087:role/IAM-GLUE-SERVICE'
       Command:
         Name: glueetl
