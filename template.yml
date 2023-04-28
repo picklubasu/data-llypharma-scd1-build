@@ -42,7 +42,7 @@ Resources:
       Timeout: 300
       MemorySize: 3008
       Description: Generate data
-  lly-pharma-raw-stage-load:
+  rllypharmaRawStageLoad:
     Type: AWS::Glue::Job
     Properties:
       Name: "llypharma-raw-stage-load"
@@ -57,7 +57,7 @@ Resources:
       NumberOfWorkers:  2
       ExecutionProperty:
         MaxConcurrentRuns:  24
-  llypharma-stage-conformed-load:
+  rllypharmaStageConformedLoad:
     Type: AWS::Glue::Job
     Properties:
       Name: "llypharma-stage-conformed-load"
