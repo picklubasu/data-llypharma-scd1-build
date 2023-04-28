@@ -69,6 +69,6 @@ Resources:
           Fn::Sub:  's3://s3-ftp-source/code/code.py'
       GlueVersion:  '2.0'
       WorkerType: 'Standard'
-      NumberOfWorkers:  2
+      NumberOfWorkers:  3
       ExecutionProperty:
         MaxConcurrentRuns:  24
